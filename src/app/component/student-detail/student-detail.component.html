@@ -1,0 +1,38 @@
+<!-- Student Detail  -->
+<section id="studentDetail">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <!-- On right side of screen show Student Data -->
+      <div class="col-md-6">
+        <h2>Just now you have selected below record:</h2>
+        <hr>
+        <h4>Name : ( using custom pipe firstCharUpCase )</h4>
+        <h3>{{StudentDetail.studentName | firstCharUpCase}}</h3>
+        <hr>
+        <h4>Address: ( using custom pipe firstCharUpCase )</h4>
+        <h3>{{StudentDetail.studentAddress | firstCharUpCase}}</h3>
+        <hr>
+        <h4>Exam Date (using pipe - date:'dd-MM-yyyy'):</h4>
+        <!-- Date Pipe -->
+        <h3>{{StudentDetail.studentExamDate | date:'dd-MM-yyyy'}}</h3>
+        <hr>
+        <h4>Subject:</h4>
+        <h3 *ngIf="StudentDetail?.studentSubject==1">English</h3>
+        <h3 *ngIf="StudentDetail?.studentSubject==2">Maths</h3>
+        <h3 *ngIf="StudentDetail?.studentSubject==3">Science</h3>
+        <h3 *ngIf="StudentDetail?.studentSubject==4">History</h3>
+        <h3 *ngIf="StudentDetail?.studentSubject==5">Geography</h3>
+        <hr>
+        <h4>Marks:</h4>
+        <h3>{{StudentDetail.studentMarks}}</h3>
+        <hr>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</section>

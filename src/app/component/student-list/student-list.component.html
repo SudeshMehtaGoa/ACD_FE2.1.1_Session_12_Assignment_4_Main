@@ -1,0 +1,43 @@
+<section id="student">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12" style="background-color:aliceblue;">
+        <h2>Search Student</h2>
+        <input [(ngModel)]="term" placeholder="Student Name" />
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Subject</th>
+              <th>Marks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of StudentsArray |searchStudent:term">
+              <!--  -->
+              <td [routerLink]="['/studentDetail',student.studentName]">
+                {{student.studentName}}
+              </td>
+              <td>
+                {{student.studentAddress}}
+              </td>
+              <td>
+                <span *ngIf="student?.studentSubject==1">English</span>
+                <span *ngIf="student?.studentSubject==2">Maths</span>
+                <span *ngIf="student?.studentSubject==3">Science</span>
+                <span *ngIf="student?.studentSubject==4">History</span>
+                <span *ngIf="student?.studentSubject==5">Geography</span>
+              </td>
+              <td>
+                {{student.studentMarks}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</section>
